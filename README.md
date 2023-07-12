@@ -29,7 +29,8 @@ As a user, I want to be able to find and share memes and GIFs quickly and effort
 ## Technologies Used
 
 - **Front-end: HTML, CSS, JavaScript**
-- **APIs:**
+- **APIs: https://humorapi.com/docs/#Search-Memes & https://developers.giphy.com/
+developers.giphy.com**
 
 ## Contributors
 
@@ -42,7 +43,9 @@ As a user, I want to be able to find and share memes and GIFs quickly and effort
 - **Alex Stock**
 
 ## Rough Breakdown of Tasks
-
+- Set up project structure and dependencies
+- Design homepage layout
+- Implement the API
 ## License
 
 This project is licensed under the MIT License
