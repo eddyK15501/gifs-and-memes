@@ -23,6 +23,8 @@ As a user, I want to be able to find and share memes and GIFs quickly and effort
 1. The website should
 
 ## Wireframe
+![Wireframe](https://github.com/eddyK15501/gifs-and-memes/assets/134161776/5bb81da9-355d-4738-b98e-2f7c88119d57)
+
 
 ## Technologies Used
 
