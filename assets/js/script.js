@@ -10,7 +10,7 @@ const fetchGifs = () => {
 }
 
 const fetchMemes = () => {
-    const requestURL = `https://api.humorapi.com/memes/random?api-key=${memeAPIKey}&media-type=image`
+    const requestURL = `https://api.humorapi.com/memes/random?api-key=${memesAPIKey}&media-type=image`
 
     fetch (requestURL)
         .then(res => res.json())
