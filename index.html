@@ -1,72 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>Gifs & Memes</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>Gifs & Memes</title>
 </head>
 
 
 <body>
-    
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="./index.html">
-            <img src="assets/images/favicon.ico">
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="./index.html">
+        <img src="assets/images/favicon.ico">
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a id="gifs" class="button has-background-primary is-size-4">
+            Gifs
+          </a>
+          <a id="memes" class="button has-background-primary is-size-4">
+            Memes
           </a>
         </div>
-      
-        
-    
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a id="gifs" class="button is-warning is-rounded">
-                  Gifs
-                </a>
-                <a id="memes" class="button is-warning is-rounded">
-                  Memes
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <aside>
-      <div id = "searchbar">
-        <div class="field" id="inputbox">
-          <input class="input is-primary is-rounded" id="userInput" type="text" placeholder="Text input">
-          <button class="button is-link" id="searchBtn">Search</button>
-          <label class="label" id="searchLabel">Search for gifs and memes</label>
-        </div>
-        <div id="recentSearch">
-
-        </div>
       </div>
-    </aside>
-    
+    </div>
+    </div>
+  </nav>
+
+
+
+  <aside>
+    <div id="searchbar">
+      <form class="field" id="searchForm">
+        <label class="label is-size-4 has-text-centered" id="searchLabel" for="userInput">Search for gifs and memes</label>
+        <div class="is-flex">
+          <input class="input is-primary has-text-centered is-medium" id="userInput" type="text" placeholder="Text input">
+          <button class="button has-background-primary is-link is-medium js-modal-trigger" id="searchBtn" type="submit" data-target="modal-js-example">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div  id="recentSearch">
       
-      
-
-   
- 
+    </div>
+  </aside>
 
 
 
 
 
-    
-    <script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-    
-    <script src="./assets/js/script.js"></script>
-    
+<!-- section. where we add the gifs and memes. we will add a "hide" class to the section later -->
+  <section class="main-container"> 
 
+    <div class="main-gifs-container"></div>
+    <div class="main-memes-container"></div>
+
+  </section>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bulma modal. Pops up if keyword search is empty. -->
+  <div id="modal-js-example" class="modal is-size-5 has-text-centered">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <p>Please enter a keyword to search</p>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
