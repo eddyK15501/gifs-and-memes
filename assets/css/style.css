@@ -1,5 +1,21 @@
+/* BULMA CDN */
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+/* BODY */
+body {
+    font-family: 'Nanum Pen Script', cursive !important;
+    font-size: 2.5rem !important;
+}
+
+/* HIDE */
+.hide {
+    display: none;
+}
+
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -27,21 +43,28 @@
     padding: 0.2rem 1rem;
 }
 
-#searchbar{
-    height: 100%; 
-    width: 20%; 
-    padding-top: 20px;
+.navbar-item a {
+    border: none;
 }
 
-#searchBtn{
-    float:right;
+#searchbar {
+    width: 25%; 
+    padding: 2rem 1rem 0;
 }
 
-
-#userInput{
-    width: 70%
+#userInput {
+    font-family: 'Nanum Pen Script', cursive;
 }
 
-#searchLabel{
-    text-align: center;
+#searchBtn { 
+    font-family: 'Nanum Pen Script', cursive;
+    transition: 0.3s ease-out;
+}
+
+#searchBtn:hover {
+    color: #000;
+}
+
+.modal {
+    font-family: Arial, Helvetica, sans-serif;
 }

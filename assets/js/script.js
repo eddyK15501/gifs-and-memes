@@ -1,67 +1,64 @@
 const giphyAPIKey = '6M9rze3zIiNSUB8y9OBLeDnETWFBztWy';
 const memesAPIKey = 'c2b7d1997fb54c2cad5ff44774377108';
 
-const fetchGifs = () => {
-    const requestURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyAPIKey}`
+let keyword = ''
+
+// ES6 syntax. fetchGifs function called with a parameter
+const fetchGifs = (searchTerm) => {
+    const requestURL = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=15&&api_key=${giphyAPIKey}`
 
     fetch(requestURL)
         .then(res => res.json())
-        .then(data => console.log(data.data))
+        .then(data => {
+            console.log(data)
+
+            // fetchMemes()
+        })
 }
 
+// fetchMemes function called without a parameter. called with global variable: keyword
 const fetchMemes = () => {
-    const requestURL = `https://api.humorapi.com/memes/random?api-key=${memesAPIKey}&media-type=image`
+    const requestURL = `https://api.humorapi.com/memes/search?api-key=${memesAPIKey}&keywords=${keyword}&media-type=image`
 
     fetch (requestURL)
         .then(res => res.json())
         .then(data => console.log(data))
 }
 
-fetchGifs()
-fetchMemes()
+// ES5 syntax
+function searchKeyword(event) {
+    // event.preventDefault(). submitting a form refreshes the page. stop the page from refreshing
+    event.preventDefault()
+    //add search term to global variable: keyword
+    keyword = $('#userInput').val()
+    // clear search input box
+    $('#userInput').val('')
 
-/*
-searchBtn = document.getElementById("searchBtn");
-//creating a variable so that we can alternate colors of the the recent search blocks
-let colorChoice = 1;
-//variable to determine which search we are on
-let searchNumber = 0
+    console.log(keyword)
 
-//adds an event listener that gets the target of the event then goes and finds the texxt input from the child element
-searchBtn.addEventListener("click", function(event){
-    let z = event.target;
-    let zParent = z.parent.getAttribute("id");
-    //saves the text input? this is probably not correct
-    let input = zParent.userInput.text;
-    //saves the text to local storage with the search number as the key
-    localStorage.setItem(("" + searchNumber),("" + input));
-    //increases search number
-    searchNumber++;
+    // if user typed in a search term, call fetchGifs of the keyword. else, pop up the modal to alert user to do so.
+    if (keyword) {
+        fetchGifs(keyword)
+    } else {
+        $('.modal').addClass('is-active')
 
-});
+        function closeModal($el) {
+            $el.classList.remove('is-active');
+        }
 
-*/
+        (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+            const $target = $close.closest('.modal');
+        
+            $close.addEventListener('click', () => {
+              closeModal($target);
+            });
+        });
 
-/*
-//saves the div where the new buttons are going
-recentSearch = document.getElementById("recentSearch");
-*/
-
-/*
-//takes the last nine searches and appends them to the div
- for (let i = searchNumber-9; i < searchNumber+1; i++){
-
-    recentSearch.innerHTML += "<button class = 'button" + colorChoice + "'>" + localStorage.getItem("" + i) + "</button>";
-
-    //once we make css for classes 1 2 and 3 this should set the background color to our three favorites and should alternate
-    if (colorChoice === 1){
-        colorChoice++
-    }else if (colorChoice === 2){
-        colorChoice ++
-    }else{
-        colorChoice = 1
+        return
     }
+}
 
-};
 
-*/
+// addEventListener 
+// search for keyword, then click on the button, or press enter, to call searchKeyword function on submit
+$('#searchForm').on('submit', searchKeyword)
