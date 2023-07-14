@@ -1,6 +1,9 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+/* import font from page*/
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap");
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
