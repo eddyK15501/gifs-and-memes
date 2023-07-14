@@ -62,7 +62,7 @@ body {
 }
 
 #searchBtn:hover {
-    color: #000;
+    color: hsl(48, 100%, 75%)
 }
 
 .modal {
