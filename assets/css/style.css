@@ -1,9 +1,25 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-/* import font from page*/
-@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap");
-
 .navbar {
   display: flex;
   justify-content: space-between;
+  padding: 0.2rem 1rem;
+}
+
+#searchbar {
+  height: 100%;
+  width: 20%;
+  padding-top: 20px;
+}
+
+#searchBtn {
+  float: right;
+}
+
+#userInput {
+  width: 70%;
+}
+
+#searchLabel {
+  text-align: center;
 }
