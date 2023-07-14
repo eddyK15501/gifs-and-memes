@@ -19,6 +19,7 @@ const fetchMemes = () => {
 
 fetchGifs()
 fetchMemes()
+
 /*
 searchBtn = document.getElementById("searchBtn");
 //creating a variable so that we can alternate colors of the the recent search blocks
