@@ -22,27 +22,6 @@ body {
   padding: 0.2rem 1rem;
 }
 
-#searchbar {
-  height: 100%;
-  width: 20%;
-  padding-top: 20px;
-}
-
-#searchBtn {
-  float: right;
-}
-
-#userInput {
-  width: 70%;
-}
-
-#searchLabel {
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem 1rem;
-}
-
 .navbar-item a {
     border: none;
 }
