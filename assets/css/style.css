@@ -5,3 +5,17 @@
     justify-content: space-between;
     padding: 0.2rem 1rem;
 }
+
+#searchbar{
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 20%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 40; /* Stay on top */
+    top: 40; /* Stay at the top */
+    left: 40;
+    /*background-color: ;*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+
