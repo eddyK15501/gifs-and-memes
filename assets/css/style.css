@@ -54,3 +54,7 @@ body {
 .modal {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#recentSearch{
+    display: list-item;
+}
