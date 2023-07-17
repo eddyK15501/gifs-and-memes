@@ -4,6 +4,11 @@
 /* GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
+/* HTML */
+html {
+    scroll-behavior: smooth;
+}
+
 /* BODY */
 body {
     font-family: 'Nanum Pen Script', cursive !important;
@@ -17,8 +22,8 @@ body {
 
 /* NAVBAR */
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   padding: 0.2rem 1rem;
 }
 
@@ -26,6 +31,7 @@ body {
     border: none;
 }
 
+/* SEARCHBAR */
 #searchbar {
     width: 25%; 
     padding: 2rem 1rem 0;
@@ -44,6 +50,7 @@ body {
     color: hsl(48, 100%, 75%)
 }
 
+/* MODAL */
 .modal {
     font-family: Arial, Helvetica, sans-serif;
 }
