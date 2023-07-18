@@ -4,97 +4,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
 
   <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <title>Gifs & Memes</title>
+  <title>MemeFlix</title>
 </head>
 
 
 <body>
-    
-    <nav class="navbar is-link is-flex is-justify-content-space-between" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <!-- Example logo added -->
-          <a class="navbar-item" href="./index.html">
-            <!-- Meme flex is a random name that can be changed -->
-            <img src="assets/images/logo-ex.png" style="max-height: 80px;" alt="SiteLogo">
-          </a>
-        </div>
-      
-        
-    
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <!-- Made the buttons bigger and responsive -->
-              <div class="buttons are-medium is-responsive">
-                <a href="#gifs" class="button is-link is-size-4">
-                  GIFs
-                </a>
-                <a href="#memes" class="button is-link is-size-4">
-                  Memes
-                </a>
-              </div>
-            </div>
+  <nav class="navbar is-link is-flex is-justify-content-space-between" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="./index.html">
+          <img src="assets/images/logo-ex.png" style="max-height: 80px;" alt="SiteLogo">
+        </a>
+      </div>        
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="navbar-links">
+            <a href="#gifs">
+              <button class="button is-link is-size-4 is-responsive">GIFS</button>
+            </a>
+            <a href="#memes">
+              <button class="button is-link is-size-4 is-responsive">Memes</button>
+            </a>
           </div>
         </div>
-      </nav>
-     
-
-
-  <aside>
-    <div id="searchbar">
-      <form class="field" id="searchForm">
-        <label class="label is-size-4 has-text-centered" id="searchLabel" for="userInput">Search for gifs and memes</label>
-        <div class="is-flex">
-          <input class="input is-link has-text-centered is-medium" id="userInput" type="text" placeholder="Text input">
-          <button class="button is-link is-medium js-modal-trigger" id="searchBtn" type="submit" data-target="modal-js-example">Search</button>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="is-flex">
+    <aside>
+      <div id="searchbar" class="mb-6">
+        <form class="field" id="searchForm">
+          <label class="label is-size-4 has-text-centered" id="searchLabel" for="userInput">Search for gifs and memes</label>
+          <div class="search-field is-flex">
+            <input class="input is-link has-text-centered is-medium" id="userInput" type="text" placeholder="Text input">
+            <button class="button is-link is-medium js-modal-trigger" id="submit-btn" type="submit" data-target="modal-js-example">Search</button>
+          </div>
+        </form>
+      </div>
+  
+      <div id="recentSearch">
+        <button class="button is-link mb-4 is-fullwidth search-btn">one</button>
+        <button class="button is-link mb-4 is-fullwidth search-btn">two</button>
+        <button class="button is-link mb-4 is-fullwidth search-btn">three</button>
+        <button class="button is-link mb-4 is-fullwidth search-btn">four</button>
+        <button class="button is-link mb-4 is-fullwidth search-btn">five</button>
+        <button class="button is-link mb-4 is-fullwidth search-btn">six</button>
+        <button class="button is-link mb-4 is-fullwidth search-btn">seven</button>
+        <button class="button is-link mb-4 is-fullwidth search-btn">eight</button>
+      </div>
+    </aside>
+  
+  
+  <!-- section. where we add the gifs and memes. we will add a "hide" class to the section later -->
+    <section class="main-container"> 
+      <div id="gifs" class="main-gifs-container">
+        <div class="gifs-header">
+          <h1 class="is-size-1 has-text-centered mt-5">Gifs</h1>
         </div>
-      </form>
-    </div>
+  
+        <!-- create 10 gif img tags in here -->
+        <div class="gifs-container">
+          <a href="https://giphy.com/gifs/thisgifishaunted-hello-halloween-happy-9XeR2SAyL9YixCYN0b">
+            <img src="https://media3.giphy.com/media/9XeR2SAyL9YixCYN0b/200.webp?cid=ff395a4f78a5937b4l0qcdc2zpwlfh8f9vkk3d5mxadyh3bo&ep=v1_gifs_search&rid=200.webp&ct=g" alt="">
+          </a>
+          <a href="https://giphy.com/gifs/foxhomeent-hello-friday-mrs-doubtfire-28GHfhGFWpFgsQB4wR">
+            <img src="https://media4.giphy.com/media/28GHfhGFWpFgsQB4wR/200.webp?cid=ff395a4f78a5937b4l0qcdc2zpwlfh8f9vkk3d5mxadyh3bo&ep=v1_gifs_search&rid=200.webp&ct=g" alt="">
+          </a>
+          <a href="https://giphy.com/gifs/sesamestreet-3pZipqyo1sqHDfJGtz">
+            <img src="https://media1.giphy.com/media/3pZipqyo1sqHDfJGtz/200.webp?cid=ff395a4f78a5937b4l0qcdc2zpwlfh8f9vkk3d5mxadyh3bo&ep=v1_gifs_search&rid=200.webp&ct=g" alt="">
+          </a>
+          <!-- add 7 more gifs for the css grid here -->
 
-    <div  id="recentSearch">
-      
-    </div>
-  </aside>
+        </div>
+  
+      </div>
+  
+  
+      <div id="memes" class="main-memes-container">
+        <div class="memes-header">
+          <h1 class="is-size-1 has-text-centered mt-5">Memes</h1>
+        </div>
+        
+        <!-- create 10 meme img tags in here -->
+        <div class="memes-container"></div>      
+          <a href="https://i.imgur.com/tEoF3NO.png">
+            <img src="https://i.imgur.com/tEoF3NO.png" alt="">
+          </a>
+          <a href="https://i.imgur.com/DHpeor3.jpg">
+            <img src="https://i.imgur.com/DHpeor3.jpg" alt="">
+          </a>
+          <a href="https://i.imgur.com/Rx7pIb2.jpg">
+            <img src="https://i.imgur.com/Rx7pIb2.jpg" alt="">
+          </a>
+          <!-- add 7 more memes for the css grid here -->
 
-
-
-
-
-<!-- section. where we add the gifs and memes. we will add a "hide" class to the section later -->
-  <section class="main-container"> 
-
-    <div id="gifs" class="main-gifs-container">
-
-      <!-- gifs header in here -->
-      <div class="gifs-header"></div>
-
-      <!-- create 15 gif img tags in here -->
-      <div class="gifs-container"></div>
-
-    </div>
-
-
-
-    <div id="memes" class="main-memes-container">
-
-      <!-- memes header in here -->
-      <div class="memes-header"></div>
-      
-      <!-- create 10 meme img tags in here -->
-      <div class="memes-container"></div>      
-
-    </div>
-
-  </section>
-
-
+      </div>
+    </section>
+  </main>  
 
   
-
-
+ 
+  
+ 
 
 
 
@@ -114,7 +130,6 @@
     </div>
     <button class="modal-close is-large" aria-label="close"></button>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
