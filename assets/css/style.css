@@ -22,15 +22,23 @@ body {
 
 /* NAVBAR */
 .navbar {
-  /* display: flex;
-  justify-content: space-between; */
   padding: 0.2rem 1rem;
 }
 
 .navbar-item a {
     border: none;
 }
+<<<<<<< HEAD
 #aside {
+=======
+
+.navbar button {
+    font-family: 'Nanum Pen Script', cursive !important;
+}
+
+/* SEARCHBAR */
+#searchbar {
+>>>>>>> dd1c4ca98a8d6b83b7b0266a9102d2eecd3ce7cf
     width: 25%; 
     padding: 2rem 1rem 0;
 }
@@ -53,4 +61,18 @@ body {
 /* MODAL */
 .modal {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#recentSearch{
+    display: list-item;
+}
+
+@media screen and (max-width: 1024px) {
+    .search-field {
+        flex-direction: column;
+    }
+
+    .search-field button {
+        margin-top: 1rem;
+    }
 }

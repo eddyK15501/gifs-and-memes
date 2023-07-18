@@ -28,12 +28,12 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <!-- Made the buttons bigger and responsive -->
-              <div class="buttons are-medium is-responsive">
-                <a href="#gifs" class="button is-link is-size-4">
-                  GIFs
+              <div class="navbar-links">
+                <a href="#gifs">
+                  <button class="button is-link is-size-4 is-responsive">GIFS</button>
                 </a>
-                <a href="#memes" class="button is-link is-size-4">
-                  Memes
+                <a href="#memes">
+                  <button class="button is-link is-size-4 is-responsive">Memes</button>
                 </a>
               </div>
             </div>
@@ -47,14 +47,14 @@
     <div id="searchbar">
       <form class="field" id="searchForm">
         <label class="label is-size-4 has-text-centered" id="searchLabel" for="userInput">Search for gifs and memes</label>
-        <div class="is-flex">
+        <div class="search-field is-flex">
           <input class="input is-link has-text-centered is-medium" id="userInput" type="text" placeholder="Text input">
           <button class="button is-link is-medium js-modal-trigger" id="searchBtn" type="submit" data-target="modal-js-example">Search</button>
         </div>
       </form>
     </div>
 
-    <div  id="recentSearch">
+    <div id="recentSearch">
       
     </div>
   </aside>
