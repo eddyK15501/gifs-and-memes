@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
 
   <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -13,36 +14,27 @@
 
 
 <body>
-    
-    <nav class="navbar is-link is-flex is-justify-content-space-between" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <!-- Example logo added -->
-          <a class="navbar-item" href="./index.html">
-            <!-- Meme flex is a random name that can be changed -->
-            <img src="assets/images/logo-ex.png" style="max-height: 80px;" alt="SiteLogo">
-          </a>
-        </div>
-      
-        
-    
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <!-- Made the buttons bigger and responsive -->
-              <div class="navbar-links">
-                <a href="#gifs">
-                  <button class="button is-link is-size-4 is-responsive">GIFS</button>
-                </a>
-                <a href="#memes">
-                  <button class="button is-link is-size-4 is-responsive">Memes</button>
-                </a>
-              </div>
-            </div>
+  <nav class="navbar is-link is-flex is-justify-content-space-between" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="./index.html">
+          <img src="assets/images/logo-ex.png" style="max-height: 80px;" alt="SiteLogo">
+        </a>
+      </div>        
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="navbar-links">
+            <a href="#gifs">
+              <button class="button is-link is-size-4 is-responsive">GIFS</button>
+            </a>
+            <a href="#memes">
+              <button class="button is-link is-size-4 is-responsive">Memes</button>
+            </a>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </nav>
      
-
-
   <aside>
     <div id="searchbar">
       <form class="field" id="searchForm">
@@ -55,17 +47,20 @@
     </div>
 
     <div id="recentSearch">
-      
+      <button class="button is-info mb-4 is-fullwidth">one</button>
+      <button class="button is-info mb-4 is-fullwidth">two</button>
+      <button class="button is-info mb-4 is-fullwidth">three</button>
+      <button class="button is-info mb-4 is-fullwidth">four</button>
+      <button class="button is-info mb-4 is-fullwidth">five</button>
+      <button class="button is-info mb-4 is-fullwidth">six</button>
+      <button class="button is-info mb-4 is-fullwidth">seven</button>
+      <button class="button is-info mb-4 is-fullwidth">eight</button>
     </div>
   </aside>
 
 
-
-
-
 <!-- section. where we add the gifs and memes. we will add a "hide" class to the section later -->
   <section class="main-container"> 
-
     <div id="gifs" class="main-gifs-container">
 
       <!-- gifs header in here -->
@@ -77,7 +72,6 @@
     </div>
 
 
-
     <div id="memes" class="main-memes-container">
 
       <!-- memes header in here -->
@@ -87,28 +81,12 @@
       <div class="memes-container"></div>      
 
     </div>
-
   </section>
 
 
   
  
   
-
-  
-
-<aside>
-  <div id="recentSearch">
-    <button class="button is-link mb-4 is-fullwidth">one</button>
-    <button class="button is-link mb-4 is-fullwidth">two</button>
-    <button class="button is-link mb-4 is-fullwidth">three</button>
-    <button class="button is-link mb-4 is-fullwidth">four</button>
-    <button class="button is-link mb-4 is-fullwidth">five</button>
-    <button class="button is-link mb-4 is-fullwidth">six</button>
-    <button class="button is-link mb-4 is-fullwidth">seven</button>
-    <button class="button is-link mb-4 is-fullwidth">eight</button>
-  </div>
-</aside>
  
 
 
@@ -129,7 +107,6 @@
     </div>
     <button class="modal-close is-large" aria-label="close"></button>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
