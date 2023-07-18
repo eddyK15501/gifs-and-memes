@@ -84,13 +84,13 @@ function searchKeyword(event) {
 $('#search-form').on('submit', searchKeyword)
 
 
+
 searchForm = document.getElementById("searchForm");
 //creating a variable so that we can alternate colors of the the recent search blocks
 /*let colorChoice = 1;*/
 //variable to determine which search we are on
 let searchNumber = 0;
 
-let keywordSearchArray = []
 //adds an event listener that gets the target of the event then goes and finds the texxt input from the child element
 searchForm.addEventListener("submit", function(event){
     let z = event.target;
