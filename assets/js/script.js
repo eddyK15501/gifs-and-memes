@@ -67,9 +67,9 @@ function searchKeyword(event) {
     // event.preventDefault(). submitting a form refreshes the page; stop the page from refreshing
     event.preventDefault()
     //store search term into global variable: keyword
-    keyword = $('#userInput').val()
+    keyword = $('#user-input').val()
     // clear search input box
-    $('#userInput').val('')
+    $('#user-input').val('')
 
     console.log(keyword)
 
@@ -96,10 +96,20 @@ for (let i = 0; i < searchHistory.length; i++){
 
 // addEventListener 
 // submit form to call searchKeyword function
-$('#searchForm').on('submit', searchKeyword)
+$('#search-form').on('submit', searchKeyword)
 
 
-
+// search-form = document.getElementById("search-form");
+// //creating a variable so that we can alternate colors of the the recent search blocks
+// /*let colorChoice = 1;*/
+// //variable to determine which search we are on
+// let searchNumber = 0;
+// //adds an event listener that gets the target of the event then goes and finds the texxt input from the child element
+// search-form.addEventListener("submit", function(event){
+//     let z = event.target;
+//     //let zParent = z.parentElement.getAttribute("id");
+//     //saves the text input? this is probably not correct
+//     let input = document.getElementById("user-input").value;
 //     //saves the text to local storage with the search number as the key
 //     localStorage.setItem(("" + searchNumber),("" + input));
 //     //increases search number
@@ -108,7 +118,7 @@ $('#searchForm').on('submit', searchKeyword)
 
 
 // //saves the div where the new buttons are going
-// recentSearch = document.getElementById("recentSearch");
+// recent-search = document.getElementById("recent-search");
 
 
 
@@ -117,7 +127,7 @@ $('#searchForm').on('submit', searchKeyword)
 //     if(localStorage.getItem(""+ i) === null){
 //         i++
 //     }else{
-//         recentSearch.innerHTML += "<button class = 'button search'>" + localStorage.getItem("" + i) + "</button>";
+//     recent-search.innerHTML += "<button class = 'button'>" + localStorage.getItem("" + i) + "</button>";
 //     };
 //     //once we make css for classes 1 2 and 3 this should set the background color to our three favorites and should alternate
 //     /*if (colorChoice === 1){
