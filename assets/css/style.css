@@ -22,13 +22,15 @@ body {
 
 /* NAVBAR */
 .navbar {
-  /* display: flex;
-  justify-content: space-between; */
   padding: 0.2rem 1rem;
 }
 
 .navbar-item a {
     border: none;
+}
+
+.navbar button {
+    font-family: 'Nanum Pen Script', cursive !important;
 }
 
 /* SEARCHBAR */
@@ -57,4 +59,14 @@ body {
 
 #recentSearch{
     display: list-item;
+}
+
+@media screen and (max-width: 1024px) {
+    .search-field {
+        flex-direction: column;
+    }
+
+    .search-field button {
+        margin-top: 1rem;
+    }
 }
