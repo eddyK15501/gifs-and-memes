@@ -98,7 +98,7 @@ recentSearch = document.getElementById("recentSearch");
     if(localStorage.getItem(""+ i) === null){
         i++
     }else{
-    recentSearch.innerHTML += "<button class = 'button'>" + localStorage.getItem("" + i) + "</button>";
+        recentSearch.innerHTML += "<button class = 'button search'>" + localStorage.getItem("" + i) + "</button>";
     };
     //once we make css for classes 1 2 and 3 this should set the background color to our three favorites and should alternate
     /*if (colorChoice === 1){
