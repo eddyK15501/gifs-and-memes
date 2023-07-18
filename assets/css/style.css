@@ -30,12 +30,12 @@ body {
 .navbar-item a {
     border: none;
 }
-
-/* SEARCHBAR */
-#searchbar {
+#aside {
     width: 25%; 
     padding: 2rem 1rem 0;
 }
+
+
 
 #userInput {
     font-family: 'Nanum Pen Script', cursive;
