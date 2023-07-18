@@ -58,6 +58,10 @@ function openModal() {
     });
 }
 
+let searchNumber = 0
+
+let recentSearchHistory = []
+
 // search a keyword in the input field, to fetch data from API
 function searchKeyword(event) {
     // event.preventDefault(). submitting a form refreshes the page; stop the page from refreshing
@@ -69,6 +73,8 @@ function searchKeyword(event) {
 
     console.log(keyword)
 
+    recentSearchHistory.append(keyword);
+
     // if user typed in a search term, call fetchGifs with the keyword. else, pop up the modal to alert user to do so.
     if (keyword) {
         fetchGifs(keyword)
@@ -78,23 +84,22 @@ function searchKeyword(event) {
     }
 }
 
+localStorage.setItem("key", JSON().stringify(recentSearchHistory));
+
+let searchHistory = JSON().parse(localStorage.getItem("key"));
+let recentSearchDiv = document.getElementById("recentSearch")
+
+for (let i = 0; i < searchHistory.length; i++){
+    recentSearchDiv.innerHTML = "<button class='button is-link mb-4 is-fullwidth search-btn'>" + searchHistory[i] + "</button>";
+}
+
 
 // addEventListener 
 // submit form to call searchKeyword function
 $('#searchForm').on('submit', searchKeyword)
 
 
-// searchForm = document.getElementById("searchForm");
-// //creating a variable so that we can alternate colors of the the recent search blocks
-// /*let colorChoice = 1;*/
-// //variable to determine which search we are on
-// let searchNumber = 0;
-// //adds an event listener that gets the target of the event then goes and finds the texxt input from the child element
-// searchForm.addEventListener("submit", function(event){
-//     let z = event.target;
-//     //let zParent = z.parentElement.getAttribute("id");
-//     //saves the text input? this is probably not correct
-//     let input = document.getElementById("userInput").value;
+
 //     //saves the text to local storage with the search number as the key
 //     localStorage.setItem(("" + searchNumber),("" + input));
 //     //increases search number
