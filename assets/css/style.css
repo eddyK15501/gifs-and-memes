@@ -37,7 +37,7 @@ body {
     font-family: 'Nanum Pen Script', cursive !important;
 }
 
-/* SEARCHBAR */
+/* ASIDE */
 aside {
     width: 25%; 
     padding: 2rem 1rem 0;
@@ -47,13 +47,22 @@ aside {
     font-family: 'Nanum Pen Script', cursive;
 }
 
-#searchBtn { 
+#submit-btn { 
     font-family: 'Nanum Pen Script', cursive;
     transition: 0.3s ease-out;
 }
 
-#searchBtn:hover {
-    color: hsl(48, 100%, 75%)
+#submit-btn:hover {
+    color: #000;
+}
+
+.search-btn {
+    color: #ffe08a !important;
+}
+
+/* SECTION  */
+section {
+    width: 75%;
 }
 
 /* MODAL */
@@ -61,10 +70,7 @@ aside {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#recentSearch{
-    display: list-item;
-}
-
+/* MEDIA QUERY */
 @media screen and (max-width: 1024px) {
     .search-field {
         flex-direction: column;
