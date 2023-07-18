@@ -28,9 +28,6 @@ body {
 .navbar-item a {
     border: none;
 }
-<<<<<<< HEAD
-#aside {
-=======
 
 .navbar button {
     font-family: 'Nanum Pen Script', cursive !important;
@@ -41,13 +38,10 @@ body {
 }
 
 /* SEARCHBAR */
-#searchbar {
->>>>>>> dd1c4ca98a8d6b83b7b0266a9102d2eecd3ce7cf
+aside {
     width: 25%; 
     padding: 2rem 1rem 0;
 }
-
-
 
 #userInput {
     font-family: 'Nanum Pen Script', cursive;
