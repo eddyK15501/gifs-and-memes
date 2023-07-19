@@ -118,12 +118,26 @@ function searchKeyword(event) {
 function populateHistory(){
     let recent = JSON.parse(localStorage.getItem("key"));
     console.log(recent);
-    let recentSearchDiv = document.getElementById("recent-search")
-    recentSearchDiv.innerHTML = ""
+    let recentSearchDiv = document.getElementById("recent-search");
+    recentSearchDiv.innerHTML = "";
 
-    for (let i = 0; i < recent.length; i++){
-    recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
-}
+    for (let i = recent.length - 8; i < recent.length; i++){
+    
+    if(!recent[i]){
+        i++
+    }else{
+        recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
+    }
+    
+    let btns = document.getElementsByClassName("search-btn")
+    for(let i = 0; i < btns.length; i++){
+        btns[i].addEventListener("click", function(event){
+            let text = event.target.innerText;
+            fetchGifs(text);
+        });
+    }
+    
+};
 }
 
 
