@@ -16,7 +16,7 @@ const fetchGifs = (searchTerm) => {
 
             let fetchedData = data.data
 
-            for (let i = 0; i < 15; i++) {
+            for (let i = 0; i < 10; i++) {
                 console.log(fetchedData[i].images.fixed_height.webp)
             }
 
@@ -57,9 +57,6 @@ function openModal() {
         });
     });
 }
-
-
-
 
 // search a keyword in the input field, to fetch data from API
 function searchKeyword(event) {
@@ -107,26 +104,27 @@ for (let i = 0; i < recent.length; i++){
 }
 
 
-// search-form = document.getElementById("search-form");
+
+// searchForm = document.getElementById("searchForm");
 // //creating a variable so that we can alternate colors of the the recent search blocks
 // /*let colorChoice = 1;*/
 // //variable to determine which search we are on
 // let searchNumber = 0;
+
 // //adds an event listener that gets the target of the event then goes and finds the texxt input from the child element
-// search-form.addEventListener("submit", function(event){
+// searchForm.addEventListener("submit", function(event){
 //     let z = event.target;
 //     //let zParent = z.parentElement.getAttribute("id");
 //     //saves the text input? this is probably not correct
-//     let input = document.getElementById("user-input").value;
+//     let input = document.getElementById("userInput").value;
 //     //saves the text to local storage with the search number as the key
 //     localStorage.setItem(("" + searchNumber),("" + input));
 //     //increases search number
 //     searchNumber++;
 // });
 
-
 // //saves the div where the new buttons are going
-// recent-search = document.getElementById("recent-search");
+// recentSearch = document.getElementById("recentSearch");
 
 
 
@@ -135,7 +133,7 @@ for (let i = 0; i < recent.length; i++){
 //     if(localStorage.getItem(""+ i) === null){
 //         i++
 //     }else{
-//     recent-search.innerHTML += "<button class = 'button'>" + localStorage.getItem("" + i) + "</button>";
+//     recentSearch.innerHTML += "<button class = 'button'>" + localStorage.getItem("" + i) + "</button>";
 //     };
 //     //once we make css for classes 1 2 and 3 this should set the background color to our three favorites and should alternate
 //     /*if (colorChoice === 1){
