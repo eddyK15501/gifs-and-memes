@@ -58,9 +58,8 @@ function openModal() {
     });
 }
 
-let searchNumber = 0
 
-let recentSearchHistory = []
+
 
 // search a keyword in the input field, to fetch data from API
 function searchKeyword(event) {
@@ -68,12 +67,15 @@ function searchKeyword(event) {
     event.preventDefault()
     //store search term into global variable: keyword
     keyword = $('#user-input').val()
+
     // clear search input box
     $('#user-input').val('')
 
     console.log(keyword)
+    searchStory.push(keyword) ;
+    console.log(searchStory);
 
-    recentSearchHistory.append(keyword);
+    ;
 
     // if user typed in a search term, call fetchGifs with the keyword. else, pop up the modal to alert user to do so.
     if (keyword) {
@@ -84,19 +86,25 @@ function searchKeyword(event) {
     }
 }
 
-localStorage.setItem("key", JSON().stringify(recentSearchHistory));
-
-let searchHistory = JSON().parse(localStorage.getItem("key"));
-let recentSearchDiv = document.getElementById("recentSearch")
-
-for (let i = 0; i < searchHistory.length; i++){
-    recentSearchDiv.innerHTML = "<button class='button is-link mb-4 is-fullwidth search-btn'>" + searchHistory[i] + "</button>";
-}
 
 
 // addEventListener 
 // submit form to call searchKeyword function
+
+let searchStory = [];
+
 $('#search-form').on('submit', searchKeyword)
+
+
+localStorage.setItem("key", JSON.stringify(searchStory));
+
+let recent = JSON.parse(localStorage.getItem("key"));
+console.log(recent);
+let recentSearchDiv = document.getElementById("recent-search")
+
+for (let i = 0; i < recent.length; i++){
+    recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
+}
 
 
 // search-form = document.getElementById("search-form");
