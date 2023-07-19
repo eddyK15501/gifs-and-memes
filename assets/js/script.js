@@ -13,34 +13,64 @@ const fetchGifs = (searchTerm) => {
     const requestURL = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=48&&api_key=${giphyAPIKey}`
 
     fetch(requestURL)
-        .then(res => res.json())
+        .then(res => {
+            $('.main-container').removeClass('hide')
+            return res.json()
+        })
         .then(data => {
-            console.log(data)
+            $('.gifs-container').html('')
 
-            let fetchedData = data.data
+            let gifsRetrieved = data.data
 
-            for (let i = 0; i < 10; i++) {
-                console.log(fetchedData[i].images.fixed_height.webp)
+            if (gifsRetrieved.length !== 0) {
+                gifsRetrieved.forEach(gif => {
+                    let anchorTag = document.createElement('a')
+                    anchorTag.setAttribute('href', gif.url)
+                    anchorTag.setAttribute('target', '_blank')
+                    let imgTag = document.createElement('img')
+                    imgTag.setAttribute('src', gif.images.fixed_height.webp)
+                    imgTag.setAttribute('alt', gif.title)
+                    anchorTag.append(imgTag)
+                    $('.gifs-container').append(anchorTag)
+                })
+            } else {
+                let h2Tag = document.createElement('h2')
+                h2Tag.setAttribute('id', 'no-gifs-found')
+                h2Tag.innerText = 'No gifs were found from search result'
+                $('.gifs-container').append(h2Tag)
             }
 
-            fetchMemes()
+            fetchMemes(searchTerm)
+            // console.log(data)
         })
 }
 
 // fetchMemes function called without a parameter. API endpoint query params called with global variable: keyword
-const fetchMemes = () => {
-    const requestURL = `https://api.humorapi.com/memes/search?api-key=${memesAPIKey}&keywords=${keyword}&media-type=image&number=10`
+const fetchMemes = (searchKeyword) => {
+    const requestURL = `https://api.humorapi.com/memes/search?api-key=${memesAPIKey}&keywords=${searchKeyword}&media-type=image&number=10`
 
     fetch (requestURL)
         .then(res => res.json())
         .then(data => {
+            $('.memes-container').html('')
+
+            let memesRetrieved = data.memes
+
+            if (memesRetrieved.length !== 0) {
+                memesRetrieved.forEach(meme => {
+                    let anchorTag = document.createElement('a')
+                    anchorTag.setAttribute('href', meme.url)
+                    anchorTag.setAttribute('target', '_blank')
+                    let imgTag = document.createElement('img')
+                    imgTag.setAttribute('src', meme.url)
+                    imgTag.setAttribute('alt', meme.description)
+                    anchorTag.append(imgTag)
+                    $('.memes-container').append(anchorTag)
+                })
+            }
+            
+            
             console.log(data)
-
-            let fetchedData = data.memes;
-
-            fetchedData.forEach(data => {
-                console.log(data.url)
-            })
         })
 }
 
