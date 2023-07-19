@@ -3,6 +3,9 @@ const giphyAPIKey = '6M9rze3zIiNSUB8y9OBLeDnETWFBztWy';
 const memesAPIKey = 'c2b7d1997fb54c2cad5ff44774377108';
 
 // global variables
+let searchStory = [];
+let searchNumber = 0;
+
 let keyword = ''
 
 // ES6 syntax. fetchGifs function called with a parameter
@@ -85,25 +88,17 @@ function searchKeyword(event) {
     }
 }
 
-function populateHistory(){
+function populateHistory() {
     let recent = JSON.parse(localStorage.getItem("key"));
     console.log(recent);
     let recentSearchDiv = document.getElementById("recent-search")
     recentSearchDiv.innerHTML = ""
 
     for (let i = 0; i < recent.length; i++){
-    recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
+        recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
+    }
 }
-}
-
 
 // addEventListener 
 // submit form to call searchKeyword function
-
-let searchStory = [];
-let searchNumber = 0;
-
 $('#search-form').on('submit', searchKeyword)
-
-
-
