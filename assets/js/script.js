@@ -69,78 +69,41 @@ function searchKeyword(event) {
     $('#user-input').val('')
 
     console.log(keyword)
-    searchStory.push(keyword) ;
-    console.log(searchStory);
-
-    ;
+    
 
     // if user typed in a search term, call fetchGifs with the keyword. else, pop up the modal to alert user to do so.
     if (keyword) {
         fetchGifs(keyword)
+        searchStory.push(keyword) ;
+        console.log(searchStory);
+        localStorage.setItem("key", JSON.stringify(searchStory));
+        populateHistory()
+
     } else {
         openModal()
         return
     }
 }
 
+function populateHistory(){
+    let recent = JSON.parse(localStorage.getItem("key"));
+    console.log(recent);
+    let recentSearchDiv = document.getElementById("recent-search")
+    recentSearchDiv.innerHTML = ""
+
+    for (let i = 0; i < recent.length; i++){
+    recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
+}
+}
 
 
 // addEventListener 
 // submit form to call searchKeyword function
 
 let searchStory = [];
+let searchNumber = 0;
 
 $('#search-form').on('submit', searchKeyword)
 
 
-localStorage.setItem("key", JSON.stringify(searchStory));
 
-let recent = JSON.parse(localStorage.getItem("key"));
-console.log(recent);
-let recentSearchDiv = document.getElementById("recent-search")
-
-for (let i = 0; i < recent.length; i++){
-    recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
-}
-
-
-
-// searchForm = document.getElementById("searchForm");
-// //creating a variable so that we can alternate colors of the the recent search blocks
-// /*let colorChoice = 1;*/
-// //variable to determine which search we are on
-// let searchNumber = 0;
-
-// //adds an event listener that gets the target of the event then goes and finds the texxt input from the child element
-// searchForm.addEventListener("submit", function(event){
-//     let z = event.target;
-//     //let zParent = z.parentElement.getAttribute("id");
-//     //saves the text input? this is probably not correct
-//     let input = document.getElementById("userInput").value;
-//     //saves the text to local storage with the search number as the key
-//     localStorage.setItem(("" + searchNumber),("" + input));
-//     //increases search number
-//     searchNumber++;
-// });
-
-// //saves the div where the new buttons are going
-// recentSearch = document.getElementById("recentSearch");
-
-
-
-// //takes the last nine searches and appends them to the div
-//  for (let i = 0; i < searchNumber +1; i++){
-//     if(localStorage.getItem(""+ i) === null){
-//         i++
-//     }else{
-//     recentSearch.innerHTML += "<button class = 'button'>" + localStorage.getItem("" + i) + "</button>";
-//     };
-//     //once we make css for classes 1 2 and 3 this should set the background color to our three favorites and should alternate
-//     /*if (colorChoice === 1){
-//         colorChoice++
-//     }else if (colorChoice === 2){
-//         colorChoice ++
-//     }else{
-//         colorChoice = 1
-//     }*/
-// };
