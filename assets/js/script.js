@@ -3,6 +3,9 @@ const giphyAPIKey = '6M9rze3zIiNSUB8y9OBLeDnETWFBztWy';
 const memesAPIKey = 'c2b7d1997fb54c2cad5ff44774377108';
 
 // global variables
+let searchStory = [];
+let searchNumber = 0;
+
 let keyword = ''
 
 // ES6 syntax. fetchGifs function called with a parameter
@@ -64,10 +67,14 @@ const fetchMemes = (searchKeyword) => {
                     anchorTag.append(imgTag)
                     $('.memes-container').append(anchorTag)
                 })
+            } else {
+                let h2Tag = document.createElement('h2')
+                h2Tag.setAttribute('id', 'no-gifs-found')
+                h2Tag.innerText = 'No gifs were found from search result'
+                $('.memes-container').append(h2Tag)
             }
             
-            
-            console.log(data)
+            // console.log(data)
         })
 }
 
@@ -98,9 +105,8 @@ function searchKeyword(event) {
     // clear search input box
     $('#user-input').val('')
 
-    console.log(keyword)
+    // console.log(keyword)
     
-
     // if user typed in a search term, call fetchGifs with the keyword. else, pop up the modal to alert user to do so.
     if (keyword) {
         fetchGifs(keyword)
@@ -108,14 +114,13 @@ function searchKeyword(event) {
         console.log(searchStory);
         localStorage.setItem("key", JSON.stringify(searchStory));
         populateHistory()
-
     } else {
         openModal()
         return
     }
 }
 
-function populateHistory(){
+function populateHistory() {
     let recent = JSON.parse(localStorage.getItem("key"));
     console.log(recent);
     let recentSearchDiv = document.getElementById("recent-search");
@@ -123,31 +128,24 @@ function populateHistory(){
 
     for (let i = recent.length - 8; i < recent.length; i++){
     
-    if(!recent[i]){
+    if (!recent[i]) {
         i++
-    }else{
+    } else {
         recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
     }
     
     let btns = document.getElementsByClassName("search-btn")
-    for(let i = 0; i < btns.length; i++){
-        btns[i].addEventListener("click", function(event){
+
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(event) {
             let text = event.target.innerText;
             fetchGifs(text);
         });
     }
     
-};
+    }
 }
-
 
 // addEventListener 
 // submit form to call searchKeyword function
-
-let searchStory = [];
-let searchNumber = 0;
-
 $('#search-form').on('submit', searchKeyword)
-
-
-
