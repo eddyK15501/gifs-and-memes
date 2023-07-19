@@ -91,8 +91,14 @@ function populateHistory(){
     let recentSearchDiv = document.getElementById("recent-search")
     recentSearchDiv.innerHTML = ""
 
-    for (let i = 0; i < recent.length; i++){
-    recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
+    for (let i = recent.length - 8; i < recent.length; i++){
+    
+    if(!recent[i]){
+        i++
+    }else{
+    
+        recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
+    }
 }
 }
 
