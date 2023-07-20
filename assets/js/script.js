@@ -3,9 +3,6 @@ const giphyAPIKey = '6M9rze3zIiNSUB8y9OBLeDnETWFBztWy';
 const memesAPIKey = 'c2b7d1997fb54c2cad5ff44774377108';
 
 // global variables
-let searchStory = [];
-let searchNumber = 0;
-
 let keyword = ''
 
 // ES6 syntax. fetchGifs function called with a parameter
@@ -45,7 +42,6 @@ const fetchGifs = (searchTerm) => {
         })
 }
 
-// fetchMemes function called without a parameter. API endpoint query params called with global variable: keyword
 const fetchMemes = (searchKeyword) => {
     const requestURL = `https://api.humorapi.com/memes/search?api-key=${memesAPIKey}&keywords=${searchKeyword}&media-type=image&number=10`
 
@@ -104,47 +100,48 @@ function searchKeyword(event) {
 
     // clear search input box
     $('#user-input').val('')
-
-    // console.log(keyword)
     
     // if user typed in a search term, call fetchGifs with the keyword. else, pop up the modal to alert user to do so.
     if (keyword) {
         fetchGifs(keyword)
-        searchStory.push(keyword) ;
-        console.log(searchStory);
-        localStorage.setItem("key", JSON.stringify(searchStory));
-        populateHistory()
+        // searchStory.push(keyword);
+        // localStorage.setItem("key", JSON.stringify(searchStory));
+        // populateHistory()
     } else {
         openModal()
         return
     }
 }
 
-function populateHistory() {
-    let recent = JSON.parse(localStorage.getItem("key"));
-    console.log(recent);
-    let recentSearchDiv = document.getElementById("recent-search");
-    recentSearchDiv.innerHTML = "";
+// function populateHistory() {
+//     let recent = JSON.parse(localStorage.getItem("key"));
+//     console.log(recent);
+//     let recentSearchDiv = document.getElementById("recent-search");
+//     recentSearchDiv.innerHTML = "";
 
-    for (let i = recent.length - 8; i < recent.length; i++){
+//     for (let i = recent.length - 8; i < recent.length; i++){
     
-    if (!recent[i]) {
-        i++
-    } else {
-        recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
-    }
+//     if (!recent[i]) {
+//         i++
+//     } else {
+//         recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
+//     }
     
-    let btns = document.getElementsByClassName("search-btn")
+//     let btns = document.getElementsByClassName("search-btn")
 
-    for (let i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function(event) {
-            let text = event.target.innerText;
-            fetchGifs(text);
-        });
-    }
+//     for (let i = 0; i < btns.length; i++) {
+//         btns[i].addEventListener("click", function(event) {
+//             let text = event.target.innerText;
+//             fetchGifs(text);
+//         });
+//     }
     
-    }
-}
+//     }
+// }
+
+// let searchStory = [];
+// let searchNumber = 0;
+
 
 // addEventListener 
 // submit form to call searchKeyword function
