@@ -140,7 +140,7 @@ function addSearchHistory(searchTerm) {
     }
 
     // If searchHistory has a length greater than 7, remove the last index from the array
-    if (searchHistory.length > 7) {
+    if (searchHistory.length > 8) {
         let nodes = document.querySelectorAll('.search-btn')
         let last = nodes[nodes.length - 1]
         last.remove()
@@ -187,7 +187,7 @@ function addPreviouslySearched() {
             searchBtn.innerText = `${search}`
             $('#recent-search').append(searchBtn)            
         })
-    } else if (searchHistory.length > 7) {
+    } else if (searchHistory.length > 8) {
         // If the length of searchHistory is greater than 7, then remove the last index from the array
         let nodes = document.querySelectorAll('.search-btn')
         let last = nodes[nodes.length - 1]
