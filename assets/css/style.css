@@ -24,8 +24,7 @@ body {
 .navbar {
   padding: 0.2rem 1rem;
   width: 100%;
-  position: sticky !important;
-  top: 0;
+  position: fixed !important;
 }
 
 .navbar-item a {
@@ -47,6 +46,7 @@ body {
 /* MAIN */
 main {
     position: relative;
+    top: 85px;
 }
 
 /* ASIDE */
@@ -85,7 +85,7 @@ section {
 }
 
 .main-container {
-    padding: 2rem 1rem 5rem;
+    padding: 0 1rem 5rem;
 }
 
 /* GIFS-CONTAINER */
@@ -187,6 +187,10 @@ section {
 }
 
 @media screen and (max-width: 477px) {
+    main {
+        top: 140px;
+    }
+
     .navbar-responsive-class {
         flex-direction: column;
         align-items: center;
