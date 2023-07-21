@@ -20,7 +20,9 @@ function fetchGifs(searchTerm) {
         .then(data => {
             // Clear out the .gifs-container in advance, to append new search results
             $('.gifs-container').html('')
-
+            // Clear out the .memes-container in advance, to append new search results
+            $('.memes-container').html('')
+            
             let gifsRetrieved = data.data
 
             $('.gifs-container').css('display', 'grid')
@@ -61,9 +63,6 @@ function fetchMemes(searchKeyword) {
     fetch(requestURL)
         .then(res => res.json())
         .then(data => {
-            // Clear out the .memes-container in advance, to append new search results
-            $('.memes-container').html('')
-
             let memesRetrieved = data.memes
             
             $('.memes-container').css('display', 'grid')
@@ -107,7 +106,7 @@ function caseSensitivity(searchTerm) {
         updateTerm[i] = updateTerm[i][0].toUpperCase() + updateTerm[i].slice(1);
         returnTerm += " " + updateTerm[i];
     }
-    // Trim any extra space from the returned string
+    // Trim any extra space from the returned string, just in case
     return returnTerm.trim();
 }
 
@@ -140,7 +139,7 @@ function addSearchHistory(searchTerm) {
     }
 
     // If searchHistory has a length greater than 7, remove the last index from the array
-    if (searchHistory.length > 7) {
+    if (searchHistory.length > 8) {
         let nodes = document.querySelectorAll('.search-btn')
         let last = nodes[nodes.length - 1]
         last.remove()
@@ -187,7 +186,7 @@ function addPreviouslySearched() {
             searchBtn.innerText = `${search}`
             $('#recent-search').append(searchBtn)            
         })
-    } else if (searchHistory.length > 7) {
+    } else if (searchHistory.length > 8) {
         // If the length of searchHistory is greater than 7, then remove the last index from the array
         let nodes = document.querySelectorAll('.search-btn')
         let last = nodes[nodes.length - 1]
@@ -226,8 +225,8 @@ function openModal() {
 // Search a keyword in the input field, to fetch data from API
 function searchKeyword(event) {
     event.preventDefault()
-    // Store search term into global variable: keyword
-    keyword = $('#user-input').val()
+    // Store search term into global variable: keyword; Trim off any extra spaces added
+    keyword = $('#user-input').val().trim()
 
     // Clear search input box
     $('#user-input').val('')
@@ -246,56 +245,3 @@ function searchKeyword(event) {
 $('#search-form').on('submit', searchKeyword)
 // Call getLocalStorage function on initial render
 getLocalStorage()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// searchStory.push(keyword);
-// localStorage.setItem("key", JSON.stringify(searchStory));
-// populateHistory()
-
-
-// function populateHistory() {
-//     let recent = JSON.parse(localStorage.getItem("key"));
-//     console.log(recent);
-//     let recentSearchDiv = document.getElementById("recent-search");
-//     recentSearchDiv.innerHTML = "";
-
-//     for (let i = recent.length - 8; i < recent.length; i++){
-    
-//     if (!recent[i]) {
-//         i++
-//     } else {
-//         recentSearchDiv.innerHTML += "<button class='button is-link mb-4 is-fullwidth search-btn'>" + recent[i] + "</button>";
-//     }
-    
-//     let btns = document.getElementsByClassName("search-btn")
-
-//     for (let i = 0; i < btns.length; i++) {
-//         btns[i].addEventListener("click", function(event) {
-//             let text = event.target.innerText;
-//             fetchGifs(text);
-//         });
-//     }
-    
-//     }
-// }
-
-// let searchStory = [];
-// let searchNumber = 0;
