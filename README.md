@@ -2,7 +2,7 @@
 
 ## Description
 
-The MemeFlix site is a web application that allows users to easily search and navigate to Memes and GIFs using keywords. This application aims to provide a convenient way for users to discover and share humorous content with their friends and family.
+MemeFlix is a web application that allows users to search for GIFs & Memes, upon searching a keyword. This website provides a convenient way for users to discover and share humorous content with friends and family. So get searching & start scrolling!
 
 ## Link to Deployed Application
 
@@ -96,21 +96,21 @@ SCENARIO: The user clicks the MemeFlix
 - Set up repository and file structure
 - Create wire frame
 - Select a CSS Framework (Bulma selected)
-- Select 2 APIs to call (Humor API & GIFY API selected)
+- Select 2 APIs to call (Humor API & GIPHY API selected)
 - Create & style navigation bar
-- Update README.md with all needed information (Acceptance Criteria, User Stories, Tasks, Links, Screenshots, etc.)
-- Add an "a" tag or "link" tag to add a link to the original location of the gif or Meme
-- Create a grid on the right side of the page for the MemeFlix to display
-- MemeFlix will display in a group of 12 - 15 each
+- Add a scroll functionality on the navbar, to navigate the user to the appropriate section of the page
+- Call 2 APIs in JavaScript to retrieve data on console.log
 - Create a search bar on the left side of the page
-- Add all searches to local storage
-- Create a GIF link and a Meme link to scroll the user to the appropriate search results section of the page
-- Add JavaScript fetch for console.log data
-- Responsive site (navigation bar, search bar, search results, etc.)
-- Call 2 APIs in JavaScript
+- Pop up modal if form input is submitted empty, without a search keyword
+- Add JavaScript to fetch data from both API calls, and append data onto the page
+- Add an anchor tag to the gifs and memes, to hyperlink back to the original URL
+- Append buttons with previously searched keywords, from local storage
+- Create a CSS grid layout on the right side of the page for both the gifs and memes container
+- Make the website responsive, for different screen sizes (navigation bar, search bar, search results, etc.)
+- Update README.md with all needed information (Acceptance Criteria, User Stories, Tasks, Links, Screenshots, etc.)
 
 ## License
 
 This project is licensed under the MIT License
 
-## Screenshots of Deployed Application
+## Screenshots of the Deployed Application
