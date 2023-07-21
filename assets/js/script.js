@@ -47,8 +47,7 @@ function fetchGifs(searchTerm) {
                 $('.gifs-container').append(h2Tag)
                 $('.gifs-container').css('display', 'block')
             }
-            // Call the Humor API to fetch memes data, as well as add the keyword to the recent searches
-            fetchMemes(searchTerm)
+            // Call function to add searched keyword into the recent searches
             addSearchHistory(searchTerm)
 
             // console.log(data)
@@ -56,9 +55,9 @@ function fetchGifs(searchTerm) {
 }
 
 // Fetch memes from the Humor API 
-function fetchMemes(searchKeyword) {
+function fetchMemes(searchTerm) {
     // Humor API request URL, with media type of images only, and maximum search results of 10
-    const requestURL = `https://api.humorapi.com/memes/search?api-key=${memesAPIKey}&keywords=${searchKeyword}&media-type=image&number=10`
+    const requestURL = `https://api.humorapi.com/memes/search?api-key=${memesAPIKey}&keywords=${searchTerm}&media-type=image&number=10`
 
     fetch(requestURL)
         .then(res => res.json())
@@ -90,6 +89,12 @@ function fetchMemes(searchKeyword) {
             
             // console.log(data)
         })
+}
+
+// Function to call both APIs at once, to retrieve data faster
+function fetchData(searched) {
+    fetchGifs(searched)
+    fetchMemes(searched)
 }
 
 // Function that capitalizes the first letter of the word/words, given as a parameter
@@ -153,9 +158,9 @@ function addSearchHistory(searchTerm) {
     // For each search history buttons created, addEventListener to fetch data
     document.querySelectorAll('.search-btn').forEach(btn => {
         // removeEventListener before addEventListener to prevent event listeners from stacking
-        btn.removeEventListener('click', fetchGifs)
+        btn.removeEventListener('click', fetchData)
         btn.addEventListener('click', (event) => {
-            fetchGifs(event.target.innerText)
+            fetchData(event.target.innerText)
         })
     })
 }
@@ -198,11 +203,21 @@ function addPreviouslySearched() {
 
     // AddEventListener for each previously searched keyword buttons
     document.querySelectorAll('.search-btn').forEach(btn => {
-        btn.removeEventListener('click', fetchGifs)
+        btn.removeEventListener('click', fetchData)
         btn.addEventListener('click', (event) => {
-            fetchGifs(event.target.innerText)
+            fetchData(event.target.innerText)
         })
     })
+}
+
+// Function called to scroll to the Gifs container
+function scrollToGifs() {
+    window.scrollTo(0, document.querySelector('#gifs').offsetTop - 5)
+}
+
+// Function called to scroll to the Memes container
+function scrollToMemes() {
+    window.scrollTo(0, document.querySelector('#memes').offsetTop - 5)
 }
 
 // Function to open up a modal, to remind user to search for a keyword
@@ -233,7 +248,7 @@ function searchKeyword(event) {
     
     // If user typed in a search term, call fetchGifs with the keyword.
     if (keyword) {
-        fetchGifs(keyword)        
+        fetchData(keyword)        
     } else {
         // Else, pop up the modal to alert user to do so.
         openModal()
@@ -241,7 +256,9 @@ function searchKeyword(event) {
     }
 }
 
-// AddEventListener when submitting form, to call searchKeyword function
+// AddEventListeners
 $('#search-form').on('submit', searchKeyword)
+$('#gifs-anchor').on('click', scrollToGifs)
+$('#memes-anchor').on('click', scrollToMemes)
 // Call getLocalStorage function on initial render
 getLocalStorage()
