@@ -20,7 +20,9 @@ function fetchGifs(searchTerm) {
         .then(data => {
             // Clear out the .gifs-container in advance, to append new search results
             $('.gifs-container').html('')
-
+            // Clear out the .memes-container in advance, to append new search results
+            $('.memes-container').html('')
+            
             let gifsRetrieved = data.data
 
             $('.gifs-container').css('display', 'grid')
@@ -61,9 +63,6 @@ function fetchMemes(searchKeyword) {
     fetch(requestURL)
         .then(res => res.json())
         .then(data => {
-            // Clear out the .memes-container in advance, to append new search results
-            $('.memes-container').html('')
-
             let memesRetrieved = data.memes
             
             $('.memes-container').css('display', 'grid')
