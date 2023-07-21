@@ -23,6 +23,8 @@ body {
 /* NAVBAR */
 .navbar {
   padding: 0.2rem 1rem;
+  width: 100%;
+  position: fixed !important;
 }
 
 .navbar-item a {
@@ -37,10 +39,17 @@ body {
     font-family: 'Nanum Pen Script', cursive !important;
 }
 
+/* MAIN */
+main {
+    position: relative;
+    top: 100px;
+}
+
 /* ASIDE */
 aside {
     width: 25%; 
     padding: 2rem 1rem 0;
+    position: fixed;
 }
 
 #user-input {
@@ -67,6 +76,8 @@ aside {
 /* SECTION  */
 section {
     width: 75%;
+    position: relative;
+    left: 25%;
 }
 
 .main-container {
@@ -74,6 +85,14 @@ section {
 }
 
 /* GIFS-CONTAINER */
+.gifs-header {
+    border: 10px solid #485fc7;
+}
+
+.memes-header {
+    border: 10px solid #485fc7;
+}
+
 .gifs-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -87,8 +106,8 @@ section {
     object-fit: cover;
 }
 
-#no-gifs-found {
-    /* STYLE UP LATER */
+#no-memes-found {
+    text-align: right;
 }
 
 /* MEMES-CONTAINER */
@@ -119,4 +138,47 @@ section {
     .search-field button {
         margin-top: 1rem;
     }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #recent-search {
+        display: none;
+    }
+
+    aside {
+        position: static;
+        width: 80%;
+    }
+
+    .search-field button {
+        width: 80% !important;
+        margin: 1rem auto;
+    }
+
+    #search-bar {
+        margin-bottom: 1rem !important;
+    }
+
+    section {
+        width: 95%;
+        position: static;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 477px) {
+    .navbar-responsive-class {
+        flex-direction: column;
+        align-items: center;
+    }
+
+   .navbar-links {
+        gap: 5rem;
+   }
 }

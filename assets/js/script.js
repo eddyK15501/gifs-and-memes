@@ -23,6 +23,8 @@ function fetchGifs(searchTerm) {
 
             let gifsRetrieved = data.data
 
+            $('.gifs-container').css('display', 'grid')
+
             // If search results from Giphy API were found
             if (gifsRetrieved.length !== 0) {
                 gifsRetrieved.forEach(gif => {
@@ -41,6 +43,7 @@ function fetchGifs(searchTerm) {
                 h2Tag.setAttribute('id', 'no-gifs-found')
                 h2Tag.innerText = 'No gifs were found from search result'
                 $('.gifs-container').append(h2Tag)
+                $('.gifs-container').css('display', 'block')
             }
             // Call the Humor API to fetch memes data, as well as add the keyword to the recent searches
             fetchMemes(searchTerm)
@@ -62,7 +65,9 @@ function fetchMemes(searchKeyword) {
             $('.memes-container').html('')
 
             let memesRetrieved = data.memes
-
+            
+            $('.memes-container').css('display', 'grid')
+            
             // If search results from Humor API were found
             if (memesRetrieved.length !== 0) {
                 memesRetrieved.forEach(meme => {
@@ -78,9 +83,10 @@ function fetchMemes(searchKeyword) {
             } else {
                 // Else, if no search results from Humor API were found
                 let h2Tag = document.createElement('h2')
-                h2Tag.setAttribute('id', 'no-gifs-found')
+                h2Tag.setAttribute('id', 'no-memes-found')
                 h2Tag.innerText = 'No memes were found from search result'
                 $('.memes-container').append(h2Tag)
+                $('.memes-container').css('display', 'block')
             }
             
             // console.log(data)
