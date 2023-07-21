@@ -1,27 +1,27 @@
-# Project One - GIFs & Memes
+# Project One - MemeFlix
 
 ## Description
 
-The GIFs & Memes site is a web application that allows users to easily search and navigate to memes and GIFs using keywords. This application aims to provide a convenient way for users to discover and share humorous content with their friends and family.
+The MemeFlix site is a web application that allows users to easily search and navigate to Memes and GIFs using keywords. This application aims to provide a convenient way for users to discover and share humorous content with their friends and family.
 
 ## User Stories
 
 ```
 AS A user
-I WANT the ability to navigate to the GIFs & Memes site
+I WANT the ability to navigate to the MemeFlix site
 SO I can view the site
 
 AS A user
 I WANT the ability to have a navigation bar
-SO the title GIFs and Memes displays
+SO the title MemeFlix displays
 
 AS A user
 I WANT the ability to have a GIFs link in the navigation bar
-SO the page scrolls me to the section of the page that has the GIFs displays from the search results
+SO the page scrolls to the section of the page that has the GIFs displayed from the search results
 
 AS A user
 I WANT the ability to have a Memes link in the navigation bar
-SO the page scrolls me to the section of the page that has the Memes displays from the search results
+SO the page scrolls to the section of the page that has the Memes displayed from the search results
 
 AS A user
 I WANT the ability to use the Search bar
@@ -29,7 +29,7 @@ SO that all the GIFs and Memes are populated in a grid
 
 AS A user
 I WANT the ability to store previous searches in the local storage
-SO that my previous search display under the Search bar and I can access those searches again
+SO that my previous searches display under the Search bar and I can access those searches again
 ```
 
 ## Acceptance Criteria
@@ -53,17 +53,17 @@ SCENARIO: The user views the page
    AND the search results will display on the right side of the page
    WHEN the user executes a search
    THEN the search results will display in a GIFs section and a Memes section
-   AND the GIFs and memes will be in a grid
+   AND the MemeFlix will be in a grid
    AND the grid takes 80% of the total view of the page
    AND all previous searches will display under the search bar
 
-SCENARIO: The user clicks the GIFs and memes
+SCENARIO: The user clicks the MemeFlix
    GIVEN a search has been executed
    AND the search results display in the grid
    WHEN the user clicks a GIF from the results
    THEN the user is navigated to the original site location of the GIF
-   WHEN the user clicks a meme from the results
-   THEN the user is navigated to the original site location of the meme
+   WHEN the user clicks a Meme from the results
+   THEN the user is navigated to the original site location of the Meme
 ```
 
 ## Wireframe
@@ -97,9 +97,9 @@ SCENARIO: The user clicks the GIFs and memes
 - Select 2 APIs to call (Humor API & GIFY API selected)
 - Create & style navigation bar
 - Update README.md with all needed information (Acceptance Criteria, User Stories, Tasks, Links, Screenshots, etc.)
-- Add an "a" tag or "link" tag to add a link to the original location of the gif or meme
-- Create a grid on the right side of the page for the GIFs and Memes to display
-- GIFs and Memes will display in a group of 12 - 15 each
+- Add an "a" tag or "link" tag to add a link to the original location of the gif or Meme
+- Create a grid on the right side of the page for the MemeFlix to display
+- MemeFlix will display in a group of 12 - 15 each
 - Create a search bar on the left side of the page
 - Add all searches to local storage
 - Create a GIF link and a Meme link to scroll the user to the appropriate search results section of the page
