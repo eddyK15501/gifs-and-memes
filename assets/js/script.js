@@ -67,7 +67,7 @@ function fetchMemes(searchKeyword) {
             let memesRetrieved = data.memes
             
             $('.memes-container').css('display', 'grid')
-            
+
             // If search results from Humor API were found
             if (memesRetrieved.length !== 0) {
                 memesRetrieved.forEach(meme => {

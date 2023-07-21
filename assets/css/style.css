@@ -24,11 +24,16 @@ body {
 .navbar {
   padding: 0.2rem 1rem;
   width: 100%;
-  position: fixed !important;
+  position: sticky !important;
+  top: 0;
 }
 
 .navbar-item a {
     border: none;
+}
+
+.navbar-item {
+    padding: 0 !important;
 }
 
 .navbar button {
@@ -42,7 +47,6 @@ body {
 /* MAIN */
 main {
     position: relative;
-    top: 100px;
 }
 
 /* ASIDE */
@@ -81,7 +85,7 @@ section {
 }
 
 .main-container {
-    padding: 0 1rem;
+    padding: 2rem 1rem 5rem;
 }
 
 /* GIFS-CONTAINER */
