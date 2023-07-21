@@ -4,6 +4,8 @@
 
 The MemeFlix site is a web application that allows users to easily search and navigate to Memes and GIFs using keywords. This application aims to provide a convenient way for users to discover and share humorous content with their friends and family.
 
+## Link to Deployed Application
+
 ## User Stories
 
 ```
@@ -79,7 +81,7 @@ SCENARIO: The user clicks the MemeFlix
   4. JavaScript
 - **APIs:**
   1. Humor API: https://humorapi.com/docs/#Search-Memes
-  2. GIFY API: https://developers.giphy.com/
+  2. GIPHY API: https://developers.giphy.com/
 
 ## Contributors
 
@@ -110,7 +112,5 @@ SCENARIO: The user clicks the MemeFlix
 ## License
 
 This project is licensed under the MIT License
-
-## Link to Deployed Application
 
 ## Screenshots of Deployed Application
