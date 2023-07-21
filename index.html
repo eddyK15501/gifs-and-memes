@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <nav class="navbar is-link is-flex is-justify-content-space-between" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-link is-flex is-justify-content-space-between navbar-responsive-class" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="./index.html">
           <img src="assets/images/logo-ex.png" style="max-height: 80px;" alt="Site Logo">
@@ -21,7 +21,7 @@
       </div>        
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="navbar-links">
+          <div class="navbar-links is-flex">
             <a href="#gifs">
               <button class="button is-link is-size-4 is-responsive">GIFS</button>
             </a>
@@ -40,7 +40,7 @@
         <form class="field" id="search-form">
           <label class="label is-size-4 has-text-centered" id="search-label" for="user-input">Search GIFs and Memes</label>
           <div class="search-field is-flex">
-            <input class="input is-link has-text-centered is-medium" id="user-input" type="text" placeholder="Search">
+            <input class="input is-link has-text-centered is-medium" id="user-input" type="text" placeholder="Funny">
             <button class="button is-link is-medium js-modal-trigger" id="submit-btn" type="submit" data-target="modal-js-example">Search</button>
           </div>
         </form>
@@ -52,7 +52,7 @@
   
     <section class="main-container hide"> 
       <div id="gifs" class="main-gifs-container">
-        <div class="gifs-header">
+        <div class="gifs-header mt-5 mb-3">
           <h1 class="is-size-1 has-text-left mt-5 mb-2 ml-5">GIFs</h1>
         </div>
         <div class="gifs-container">
@@ -61,7 +61,7 @@
       </div>
 
       <div id="memes" class="main-memes-container">
-        <div class="memes-header">
+        <div class="memes-header mt-5 mb-3">
           <h1 class="is-size-1 has-text-right mt-5 mb-2 mr-5">Memes</h1>
         </div>
         <div class="memes-container"></div>      
