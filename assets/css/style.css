@@ -2,7 +2,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
 /* GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nanum+Pen+Script&display=swap');
 
 /* HTML */
 html {
@@ -11,7 +11,7 @@ html {
 
 /* BODY */
 body {
-    font-family: 'Nanum Pen Script', cursive !important;
+    font-family: 'Indie Flower', cursive !important;
     font-size: 2.5rem !important;
 }
 
@@ -36,11 +36,7 @@ body {
 }
 
 .navbar button {
-    font-family: 'Nanum Pen Script', cursive !important;
-}
-
-.navbar button {
-    font-family: 'Nanum Pen Script', cursive !important;
+    font-family: 'Indie Flower', cursive;
 }
 
 /* MAIN */
@@ -57,24 +53,46 @@ aside {
 }
 
 #user-input {
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Indie Flower', cursive;
 }
 
 #submit-btn { 
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Indie Flower', cursive;
     transition: 0.3s ease-out;
 }
 
 #submit-btn:hover {
-    color: #000;
+    color: hsl(48, 100%, 50%);
 }
 
 .search-btn {
-    color: #ffe08a !important;
+    width: 100%;
+    border: none;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+.search-btn:hover {
+    transform: scale(1.4);
+}
+
+.search-btn:active {
+    color: hsl(48, 100%, 50%);
 }
 
 #recent-search {
-    margin-top: 3.2rem;
+    width: 100%;
+    margin-top: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
 }
 
 /* SECTION  */
@@ -90,11 +108,11 @@ section {
 
 /* GIFS-CONTAINER */
 .gifs-header {
-    border: 10px solid #485fc7;
+    font-family: 'Indie Flower', cursive;
 }
 
 .memes-header {
-    border: 10px solid #485fc7;
+    font-family: 'Indie Flower', cursive;
 }
 
 .gifs-container {

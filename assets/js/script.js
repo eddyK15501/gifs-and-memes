@@ -136,7 +136,7 @@ function addSearchHistory(searchTerm) {
 
         // Create a new search history button and prepend it to the page
         const searchBtn = document.createElement('button')
-        searchBtn.classList.add('button', 'is-link', 'mb-4', 'is-fullwidth', 'search-btn')
+        searchBtn.classList.add('search-btn')
         searchBtn.innerText = `${searchHistory[0]}`
         $('#recent-search').prepend(searchBtn)
     } else {
@@ -187,7 +187,7 @@ function addPreviouslySearched() {
     if (searchHistory.length > 0) {
         searchHistory.forEach(search => {
             const searchBtn = document.createElement('button')
-            searchBtn.classList.add('button', 'is-link', 'mb-4', 'is-fullwidth', 'search-btn')
+            searchBtn.classList.add('search-btn')
             searchBtn.innerText = `${search}`
             $('#recent-search').append(searchBtn)            
         })
@@ -212,12 +212,12 @@ function addPreviouslySearched() {
 
 // Function called to scroll to the Gifs container
 function scrollToGifs() {
-    window.scrollTo(0, document.querySelector('#gifs').offsetTop - 5)
+    window.scrollTo(0, document.querySelector('#gifs').offsetTop - 12)
 }
 
 // Function called to scroll to the Memes container
 function scrollToMemes() {
-    window.scrollTo(0, document.querySelector('#memes').offsetTop - 5)
+    window.scrollTo(0, document.querySelector('#memes').offsetTop - 12)
 }
 
 // Function to open up a modal, to remind user to search for a keyword
