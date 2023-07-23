@@ -5,7 +5,37 @@
 MemeFlix is a web application that allows users to search for GIFs & Memes, upon searching a keyword. This website provides a convenient way for users to discover and share humorous content with friends and family. So get searching & start scrolling!
 
 ## Link to Deployed Application
+
 https://eddyk15501.github.io/gifs-and-memes/
+
+## Technologies Used
+
+- **Front-end:**
+  1. HTML
+  2. Bulma CSS Framework
+  3. CSS (personalizations by team)
+  4. JavaScript
+- **APIs:**
+  1. Humor API: https://humorapi.com/docs/#Search-Memes
+  2. GIPHY API: https://developers.giphy.com/
+
+## Contributors
+
+- Andrew Epermanis
+- Edward Kim
+- Elaine Luckey
+- Michaela Steele
+- Alex Stock
+
+## Wireframe
+
+![Wireframe](https://github.com/eddyK15501/gifs-and-memes/assets/134161776/5bb81da9-355d-4738-b98e-2f7c88119d57)
+
+## Screenshots of the Deployed Application
+
+#### Laptop L - 1440px
+![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.29.23%20PM.png)
+![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.29.35%20PM.png)
 
 ## User Stories
 
@@ -67,43 +97,6 @@ SCENARIO: The user clicks the MemeFlix
    WHEN the user clicks a Meme from the results
    THEN the user is navigated to the original site location of the Meme
 ```
-
-## Screenshots of the Deployed Application
-
-#### Laptop L - 1440px
-![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.29.23%20PM.png)
-![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.29.35%20PM.png)
-
-#### Tablet - 768px
-![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.31.51%20PM.png)
-![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.32.01%20PM.png)
-
-#### Mobile L - 425px
-![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.32.18%20PM.png)
-![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.32.26%20PM.png)
-
-## Wireframe
-
-![Wireframe](https://github.com/eddyK15501/gifs-and-memes/assets/134161776/5bb81da9-355d-4738-b98e-2f7c88119d57)
-
-## Technologies Used
-
-- **Front-end:**
-  1. HTML
-  2. Bulma CSS Framework
-  3. CSS (personalizations by team)
-  4. JavaScript
-- **APIs:**
-  1. Humor API: https://humorapi.com/docs/#Search-Memes
-  2. GIPHY API: https://developers.giphy.com/
-
-## Contributors
-
-- Andrew Epermanis
-- Edward Kim
-- Elaine Luckey
-- Michaela Steele
-- Alex Stock
 
 ## Breakdown of Tasks
 
