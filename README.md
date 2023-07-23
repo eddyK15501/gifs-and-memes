@@ -5,6 +5,7 @@
 MemeFlix is a web application that allows users to search for GIFs & Memes, upon searching a keyword. This website provides a convenient way for users to discover and share humorous content with friends and family. So get searching & start scrolling!
 
 ## Link to Deployed Application
+https://eddyk15501.github.io/gifs-and-memes/
 
 ## User Stories
 
@@ -42,7 +43,7 @@ SCENARIO: The user views the page
    AND the page displays
    WHEN the user views the page
    THEN the navigation bar displays at the top of the page
-   AND the navigation bar includes the title "GIFs & Memes"
+   AND the navigation bar includes the title "MemeFlix"
    AND the navigation bar includes two links named "GIFs" and "Memes"
    AND the links are clickable
    WHEN the user clicks the GIFs link
@@ -51,12 +52,11 @@ SCENARIO: The user views the page
    THEN the user is navigated to the Memes section of the page
    WHEN the user views the search bar
    THEN the search bar displays on the left side of the page
-   AND the search bar column takes 20% of the total view of the page
+   AND the search bar column takes 25% of the total view of the page
    AND the search results will display on the right side of the page
    WHEN the user executes a search
    THEN the search results will display in a GIFs section and a Memes section
-   AND the MemeFlix will be in a grid
-   AND the grid takes 80% of the total view of the page
+   AND the displayed results will be styled in a CSS grid format
    AND all previous searches will display under the search bar
 
 SCENARIO: The user clicks the MemeFlix
@@ -67,6 +67,20 @@ SCENARIO: The user clicks the MemeFlix
    WHEN the user clicks a Meme from the results
    THEN the user is navigated to the original site location of the Meme
 ```
+
+## Screenshots of the Deployed Application
+
+#### Laptop L - 1440px
+![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.29.23%20PM.png)
+![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.29.35%20PM.png)
+
+#### Tablet - 768px
+![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.31.51%20PM.png)
+![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.32.01%20PM.png)
+
+#### Mobile L - 425px
+![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.32.18%20PM.png)
+![alt text](./assets/images/screenshots/Screenshot%202023-07-23%20at%203.32.26%20PM.png)
 
 ## Wireframe
 
@@ -112,5 +126,3 @@ SCENARIO: The user clicks the MemeFlix
 ## License
 
 This project is licensed under the MIT License
-
-## Screenshots of the Deployed Application
