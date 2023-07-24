@@ -62,6 +62,9 @@ function fetchMemes(searchTerm) {
     fetch(requestURL)
         .then(res => res.json())
         .then(data => {
+            // Clear out memes container one more time when function is called, just in case
+            $('.memes-container').html('')
+
             let memesRetrieved = data.memes
             
             $('.memes-container').css('display', 'grid')
