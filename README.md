@@ -4,7 +4,7 @@
 
 MemeFlix is a web application that allows users to search for GIFs & Memes, upon searching a keyword. This website provides a convenient way for users to discover and share humorous content with friends and family. So get searching & start scrolling!
 
-#### API key for the memes, was upgraded to make 1000 requests per day. That upgrade will be deactivated on Aug. 14th, 2023. From that day on, Humor API will only be able to make 20 requests per day. If the memes do not seem to appear on the page, it may be due to this cause.
+#### The API key for the memes, was upgraded to make 1000 requests per day. That upgrade will be deactivated on Aug. 14th, 2023. From that day on, Humor API will only be able to make 20 requests per day. If the memes do not seem to appear on the page, it may be due to this cause.
 
 ## Link to Deployed Application
 
